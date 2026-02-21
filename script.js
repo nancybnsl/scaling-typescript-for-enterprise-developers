@@ -1,37 +1,6 @@
-var skiLesson = {
-    name: "Steeps Clinic",
-    location: "Matterhorn Gondola",
-    attendees: [
-        {
-            name: "Jessica Sweet",
-            interest: "skiing"
-        },
-        {
-            name: "Jason Williams",
-            interest: "adrenaline sports"
-        }
-    ]
-};
-var cookingClass = {
-    name: "Thai Cooking Class",
-    location: "West Kitchen",
-    attendees: [
-        {
-            name: "Leon Vida",
-            interest: "restaurants"
-        }
-    ]
-};
-var massage = {
-    name: "Hot Stone Massage",
-    location: "Lotus Spa Lounge",
-    attendees: [
-        {
-            name: "Jordan James",
-            interest: "spas"
-        }
-    ]
-};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var activities_1 = require("./activities");
 var Hotel = /** @class */ (function () {
     function Hotel(id, name, cost, category) {
         this.amenities = [];
@@ -53,3 +22,4 @@ peakLodge.addAmenity("breakfast");
 peakLodge.addAmenity("wifi");
 var description = peakLodge.describeHotel();
 console.log(description);
+console.log(activities_1.skiLesson);

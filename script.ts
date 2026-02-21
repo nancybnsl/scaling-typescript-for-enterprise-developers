@@ -1,64 +1,6 @@
-interface Activity<AttendeeType> {
-  name: string;
-  location: string;
-  attendees: AttendeeType[];
-}
+import { skiLesson } from "./activities";
 
-interface Guest {
-  name: string;
-  interest: string;
-}
 
-type Skier = Guest & { interest: "skiing" };
-type SpaEnthusiast = Guest & { interest: "spas" };
-type Foodie = Guest & { interest: "restaurants" };
-type ThrillSeeker = Guest & {
-  interest: "adrenaline sports";
-};
-
-type GuestWithActivity<GuestType> = GuestType extends Guest
-  ? GuestType
-  : never;
-
-const skiLesson: Activity<
-  GuestWithActivity<Skier | ThrillSeeker>
-> = {
-  name: "Steeps Clinic",
-  location: "Matterhorn Gondola",
-  attendees: [
-    {
-      name: "Jessica Sweet",
-      interest: "skiing"
-    },
-    {
-      name: "Jason Williams",
-      interest: "adrenaline sports"
-    }
-  ]
-};
-
-const cookingClass: Activity<GuestWithActivity<Foodie>> = {
-  name: "Thai Cooking Class",
-  location: "West Kitchen",
-  attendees: [
-    {
-      name: "Leon Vida",
-      interest: "restaurants"
-    }
-  ]
-};
-
-const massage: Activity<GuestWithActivity<SpaEnthusiast>> =
-  {
-    name: "Hot Stone Massage",
-    location: "Lotus Spa Lounge",
-    attendees: [
-      {
-        name: "Jordan James",
-        interest: "spas"
-      }
-    ]
-  };
 
 type HotelCategory = "gold" | "silver" | "bronze";
 
@@ -105,3 +47,4 @@ peakLodge.addAmenity("breakfast");
 peakLodge.addAmenity("wifi");
 let description = peakLodge.describeHotel();
 console.log(description);
+console.log(skiLesson);
